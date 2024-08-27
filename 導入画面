@@ -1,0 +1,55 @@
+// script.js
+const questions = [
+  "あなたの性別をおしえてください",
+  "（男性）  （女性）  （その他）",
+  "生年月日を入力して下さい（非公開情報です。）",
+  "〇〇〇〇年 〇〇月 〇〇日",
+  "あなたの身長は何cmですか? （非公開情報です。）",
+  "〇〇〇,〇cm",
+  "体重は何kgですか？（非公開情報です。）",
+  "〇〇,〇kg",
+  "入力ありがとうございます。",
+  "記録を続けることで、健康になっていきましょう",
+  "あなたのこと、なんて呼んだらいいですか？",
+  "（名前記入）", 
+  "ありがとうございます。",
+  "〇〇さん昨日の就寝時間と起床時間を教えてください",
+  "  就寝時間〇〇:〇〇",
+  "起床時間〇〇:〇〇",
+  "ありがとうございます。",
+  "〇〇さんのことが分かってきました。",
+  "これから一緒に頑張っていきましょう",
+  "次へ進む" 
+];
+
+let currentQuestion = 0;
+const chatContainer = document.querySelector('.chat-container');
+const userInput = document.getElementById('userInput');
+const sendButton = document.getElementById('sendButton');
+
+function displayQuestion() {
+  if (currentQuestion < questions.length) {
+    const messageElement = document.createElement('div');
+    messageElement.className = 'message system-message';
+    messageElement.textContent = questions[currentQuestion];
+    chatContainer.appendChild(messageElement);
+    currentQuestion++;
+  } else {
+    // すべての質問を表示後に入力欄を表示
+    document.querySelector('.input-area').style.display = 'block';
+  }
+}
+
+sendButton.addEventListener('click', () => {
+  const userMessage = document.createElement('div');
+  userMessage.className = 'message user-message';
+  userMessage.textContent = userInput.value;
+  chatContainer.appendChild(userMessage);
+  userInput.value = ''; 
+
+  // 次の質問を表示
+  displayQuestion();
+});
+
+// 最初の質問を表示
+displayQuestion();
