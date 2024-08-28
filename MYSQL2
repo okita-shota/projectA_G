@@ -1,0 +1,12 @@
+テーブル名: users
+カラム名	データ型	NULL可否	主キー	説明
+user_id	INT UNSIGNED	NO	YES	ユーザーID (自動採番)
+gender	VARCHAR(10)	YES	NO	性別 (男性, 女性, その他)
+birth_date	DATE	YES	NO	生年月日
+height	INT	YES	NO	身長 (cm)
+weight	INT	YES	NO	体重 (kg)
+nickname	VARCHAR(50)	YES	NO	ニックネーム
+bedtime	TIME	YES	NO	就寝時間
+wakeup_time	TIME	YES	NO	起床時間
+created_at	TIMESTAMP	NO	NO	登録日時 (自動設定)
+updated_at	TIMESTAMP	NO	NO	更新日時 (自動設定)
