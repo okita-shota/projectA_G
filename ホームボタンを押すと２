@@ -1,0 +1,11 @@
+/* style.css - 既存のスタイルに追記 */
+/* ... (他のスタイル) ... */
+
+.home-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* 緑色 */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
