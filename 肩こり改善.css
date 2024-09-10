@@ -1,0 +1,11 @@
+.exercise-menu li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+  }
+  .exercise-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
