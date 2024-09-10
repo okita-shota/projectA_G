@@ -1,18 +1,14 @@
 body {
+  background-color: #F5F5F5; /* 非常に淡いグレー */
+  color: #333333; /* 濃いグレー */
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
 }
 
 header {
-  background-color: #e67e22;
-  color: white;
-  text-align: center;
+  background-color: #FAFAD2; /* ライトゴールド */
+  color: #333333;
   padding: 10px 0;
-}
-
-h1 {
-  margin: 0;
+  text-align: center;
 }
 
 main {
@@ -20,9 +16,8 @@ main {
 }
 
 footer {
+  background-color: #FAFAD2; /* ライトゴールド */
+  color: #333333;
   text-align: center;
-  margin-top: 20px;
   padding: 10px;
-  background-color: #e67e22;
-  color: white;
 }
