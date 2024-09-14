@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>画像認識</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@1.0.0"></script>
+</head>
+<body>
+  <input type="file" id="imageUpload">
+  <img id="uploadedImage" width="224" height="224">
+  <div id="prediction"></div>
+
+  <script>
+    const imageUpload = document.getElementById('imageUpload');
+    const uploadedImage = document.getElementById('uploadedImage');
+    const predictionDiv = document.getElementById('prediction');
+
+    imageUpload.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        uploadedImage.src = e.target.result;
+
+        // 画像認識の実行
+        const img = tf.browser.fromPixels(uploadedImage)
+          .resizeNearestNeighbor([224, 224])
+          .toFloat()
+          .expandDims();
+        mobilenet.load().then(model => {
+          model.classify(img).then(predictions => {
+            predictionDiv.innerHTML = 予測: ${predictions[0].className} (${predictions[0].probability * 100}%);
+          });
+        });
+      }
+      reader.readAsDataURL(file);
+    });
+  </script>
+</body>
+</html>
