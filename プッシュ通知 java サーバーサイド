@@ -1,0 +1,35 @@
+// ... (必要なモジュールのインポートなど)
+
+const admin = require("firebase-admin");
+admin.initializeApp({
+  // Firebaseのプロジェクト設定
+});
+
+app.post('/save-notification-settings', async (req, res) => {
+  const { reminder, achievement, newContent } = req.body;
+
+  // データベースに設定を保存 (例: MongoDB)
+  // ...
+
+  // プッシュ通知を送信 (reminder が true の場合)
+  if (reminder) {
+    const message = {
+      notification: {
+        title: "運動リマインダー",
+        body: "そろそろ運動の時間です！"
+      },
+      token: userToken // ユーザーのFCMトークン
+    };
+
+    try {
+      await admin.messaging().send(message);
+      console.log('Successfully sent message:', response);
+    } catch (error) {
+      console.log('Error sending message:', error);
+    }
+  }
+
+  res.status(200).send('設定を保存しました');
+});
+
+// ... (その他のルートハンドラなど)
