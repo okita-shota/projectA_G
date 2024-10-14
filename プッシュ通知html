@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>通知設定</title>
+  <style>
+    /* CSS */
+    body {
+      font-family: sans-serif;
+    }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .notification-setting {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>通知設定</h1>
+
+    <div class="notification-setting">
+      <label for="reminder">運動リマインダー:</label>
+      <input type="checkbox" id="reminder" name="reminder" checked>
+    </div>
+
+    <div class="notification-setting">
+      <label for="achievement">目標達成のお知らせ:</label>
+      <input type="checkbox" id="achievement" name="achievement">
+    </div>
+
+    <div class="notification-setting">
+      <label for="new-content">新しいコンテンツの追加:</label>
+      <input type="checkbox" id="new-content" name="new-content">
+    </div>
+
+    <button id="save-button">設定を保存</button>
+  </div>
+
+  <script>
+    // JavaScript (設定の保存処理など)
+    const saveButton = document.getElementById('save-button');
+    saveButton.addEventListener('click', () => {
+      // チェックボックスの状態を取得
+      const reminder = document.getElementById('reminder').checked;
+      const achievement = document.getElementById('achievement').checked;
+      const newContent = document.getElementById('new-content').checked;
+
+      // サーバーに設定を送信する処理 (fetch APIなどを使用)
+      // ...
+
+      alert('設定を保存しました');
+    });
+  </script>
+</body>
+</html>
