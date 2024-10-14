@@ -1,0 +1,26 @@
+// ... (Nodemailerのインストールと設定)
+
+const nodemailer = require('nodemailer');
+
+// ...
+
+if (newContent) {
+  const transporter = nodemailer.createTransport({
+    // メールサーバーの設定
+  });
+
+  const mailOptions = {
+    from: 'your_email@example.com',
+    to: user.email, // ユーザーのメールアドレス
+    subject: '新しいコンテンツが追加されました！',
+    text: '新しい運動コンテンツをチェックしてみてください！'
+  };
+
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+}
