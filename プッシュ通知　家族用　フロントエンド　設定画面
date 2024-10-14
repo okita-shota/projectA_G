@@ -1,0 +1,6 @@
+<div class="notification-setting">
+  <label for="family-email">家族への通知:</label>
+  <input type="checkbox" id="family-notification" name="familyNotification">
+  <input type="email" id="family-email" name="familyEmail" placeholder="家族のメールアドレス">
+  <p class="small-text">家族に通知を送信するには、上記のチェックボックスをオンにして、メールアドレスを入力してください。</p>
+</div>
