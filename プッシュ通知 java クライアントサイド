@@ -1,0 +1,27 @@
+const saveButton = document.getElementById('save-button');
+saveButton.addEventListener('click', async () => {
+  const reminder = document.getElementById('reminder').checked;
+  const achievement = document.getElementById('achievement').checked;
+  const newContent = document.getElementById('new-content').checked;
+
+  try {
+    const response = await fetch('/save-notification-settings', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ reminder, achievement, newContent })
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.text();
+    alert(data); // サーバーからのレスポンスを表示
+
+  } catch (error) {
+    console.error('Error saving settings:', error);
+    alert('設定の保存に失敗しました');
+  }
+});
