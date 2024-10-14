@@ -1,0 +1,23 @@
+// ... (Nodemailerのインストールと設定)
+
+app.post('/save-notification-settings', async (req, res) => {
+  // ... (設定の保存処理)
+
+  const familyEmail = req.body.familyEmail; // 家族のメールアドレス (設定画面から取得)
+
+  if (achievement && familyEmail) { // 目標達成時、かつ家族のメールアドレスが設定されている場合
+    // ... (Nodemailerを使ってメールを送信)
+
+    const mailOptions = {
+      from: 'your_email@example.com',
+      to: familyEmail, // 家族のメールアドレス
+      subject: '〇〇さんが目標を達成しました！',
+      text: '〇〇さんが運動の目標を達成しました！おめでとうございます！'
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+       // ... (エラー処理)
+    });
+
+  }
+});
