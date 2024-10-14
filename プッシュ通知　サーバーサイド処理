@@ -1,0 +1,17 @@
+const express = require('express');
+const app = express();
+
+app.use(express.json()); // リクエストボディをJSONとしてパース
+
+app.post('/save-notification-settings', (req, res) => {
+  const settings = req.body; // クライアントから送信された設定データ
+  console.log(settings); // 設定データをコンソールに表示
+
+  // データベースに保存する処理など
+
+  res.send('設定を保存しました');
+});
+
+app.listen(3000, () => {
+  console.log('Server listening on port 3000');
+});
