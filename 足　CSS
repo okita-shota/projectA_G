@@ -1,0 +1,40 @@
+.container {
+  display: flex; /* 横並びにする */
+  justify-content: center; /* 中央寄せ */
+  margin-top: 20px; /* 上部に余白を追加 */
+}
+
+
+.btn {
+    display: inline-block;  /* aタグをブロック要素のように扱う */
+    text-decoration: none; /* リンクの下線を削除 */
+    padding: 20px 30px;  /* ボタン内部の余白 */
+    margin: 10px; /* ボタン間の余白 */
+    border-radius: 5px;   /* 角を丸める */
+    background-color: #fff; /* 背景色 */
+    color: #000;         /* 文字色 */
+    border: 1px solid #ddd; /* 枠線 */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* 影 */
+    transition: transform 0.2s ease; /* ホバー時のアニメーション */
+    width: 200px; /* 幅を指定 */
+    height: 150px; /* 高さを指定 */
+    display: flex; /* Flexboxを使う */
+    flex-direction: column; /* 縦方向に配置 */
+    align-items: center; /* 横方向中央揃え */
+    justify-content: center; /* 縦方向中央揃え */
+  }
+
+.btn:hover {
+    transform: scale(1.05); /* ホバー時に少し大きくする */
+    box-shadow: 3px 3px 7px rgba(0,0,0,0.2);  /* ホバー時の影を濃くする */
+  }
+
+.icon {
+    font-size: 48px;  /* アイコンサイズ */
+    margin-bottom: 10px; /* アイコンとテキストの間隔 */
+}
+
+.text {
+    font-size: 16px;  /* テキストサイズ */
+    text-align: center; /* テキスト中央揃え */
+}
