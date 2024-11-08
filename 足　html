@@ -1,6 +1,27 @@
-<div class="container">
-    <a href="asi.html" class="btn">
-      <span class="icon">🦶</span>
-      <span class="text">足のトレーニング</span>
-    </a>
-</div>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>足のトレーニング - ムキムキばーちゃん</title>
+  <link rel="stylesheet" href="足のトレーニング.css">
+</head>
+<body>
+  <header>
+    <h1>ムキムキばーちゃん</h1>
+    <h2>足のトレーニング</h2>
+  </header>
+
+  <main>
+    <section class="exercise-section">
+      <img src="hip_exercise.png" alt="足のトレーニング" class="exercise-image">
+      <p>足のトレーニングは、全身の筋力向上、バランス感覚の強化、基礎代謝の向上などに効果的です。。</p>
+    </section>
+  </main>
+
+  <footer>
+    <button class="footer-button">もっと詳しく</button>
+    <p>© 2023 ムキムキばーちゃん</p>
+  </footer>
+</body>
+</html>
